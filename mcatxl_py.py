@@ -12,8 +12,6 @@ mNumber = 0
 class RangeError(Exception):
     pass
 
-# class NullUserInputError(Exception):
-#     pass
 
 workBook = xlrd.open_workbook(file_path)
 
@@ -27,16 +25,12 @@ while continueProgram != 'q' or continueProgram != 'Q':
 
     try:
         mNumber = int(input("Enter the Messier Number : "))
-        # if mNumber is None:
-        #     raise NullUserInputError("Enter a Messier Number!")
         if mNumber <= 0 or mNumber > 110:
             raise RangeError("The Messier Number should be in between 0 and 111")
     except ValueError:
         print("Invalid Input!!!")
     except RangeError:
         print("The Messier Number should be in between 0 and 111")
-    # except NullUserInputError:
-    #     print("Enter a Messier Number!")
     else:
         columnNames = sheet.row_values(0)
         dataRow = sheet.row_values(mNumber)
@@ -55,9 +49,7 @@ while continueProgram != 'q' or continueProgram != 'Q':
                     columnNames[columnNumber] = 'NGC Number'
             print(columnNames[columnNumber], ':\t', dataRow[columnNumber])
         print("--------------------------------------------------------------")
-        #print(*columnNames, sep='\n')
-        #print(*dataRow, sep='\n')
-        #input("\nPress return to continue")
+
 
     print('\nEnter q to exit program. Press any other key to continue')
     continueProgram = input()
