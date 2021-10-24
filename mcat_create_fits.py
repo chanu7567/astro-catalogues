@@ -9,12 +9,12 @@ DEC = np.array([22,0,28,-26,2,-32,-34,-24,-18,-4,-6,-1,36,-3,12,-13,-16,-17,-26,
 MAG = np.array([8.4,6.5,6.4,5.9,5.8,4.2,3.3,5.8,7.9,6.6,5.8,6.6,5.9,7.6,6.4,6,7,6.9,7.2,8.5,5.9,5.1,5.5,4.5,4.6,8,8.1,6.9,6.6,7.5,3.4,8.2,5.7,5.2,5.1,6,5.6,6.4,4.6,8,4.5,4,9,3.1,1.2,6.1,4.4,5.8,8.4,5.9,8.1,6.9,7.7,7.7,7,8.2,9,9.8,9.8,8.8,9.7,6.6,8.6,8.5,9.3,9,6.9,8.2,7.7,8.1,8.3,9.4,8.9,9.2,8.6,11.5,8.8,8,8,7.2,6.8,8.4,7.6,9.3,9.2,9.2,8.6,9.5,9.8,9.5,10.2,6.5,6.2,8.1,9.7,9.2,11.2,10.1,9.8,9.4,7.7,7.7,7.4,8.3,9.3,8.3,8.1,10,9.8,8])
 ObjType = np.array(['PN','GC','GC','GC','GC','OC','OC','DN','GC','GC','OC','GC','GC','GC','GC','DN','DN','OC','GC','DN','OC','GC','OC','OC','OC','OC','PN','GC','OC','GC','SG','EG','SG','OC','OC','OC','OC','OC','OC','dbl','OC','DN','DN','OC','OC','OC','OC','OC','EG','OC','SG','OC','GC','GC','GC','GC','PN','SG','EG','EG','SG','GC','SG','SG','SG','SG','OC','GC','GC','GC','GC','GC','ast','S','GC','PN','SG','DN','GC','GC','SG','IG','SG','EG','EG','EG','EG','SG','EG','SG','SG','GC','OC','SG','SG','SG','PN','SG','SG','SG','SG','SG','OC','SG','EG','SG','GC','SG','SG','EG'])
 
-col1 = fits.Column(name = 'MNumber', format = 'E', array = MNumber)
+col1 = fits.Column(name = 'MNumber', format = 'I4', array = MNumber)
 col2 = fits.Column(name = 'NGCNumber', format = 'A', array = NGCNumber)
 col3 = fits.Column(name = 'ConstellationCode', format = 'A', array = ConstellationCode)
-col4 = fits.Column(name = 'RA', format = 'E', array = RA)
-col5 = fits.Column(name = 'DEC', format = 'E', array = DEC)
-col6 = fits.Column(name = 'MAG', format = 'E', array = MAG)
+col4 = fits.Column(name = 'RA', format = 'F50.20', array = RA)
+col5 = fits.Column(name = 'DEC', format = 'I3', array = DEC)
+col6 = fits.Column(name = 'MAG', format = 'I2', array = MAG)
 col7 = fits.Column(name = 'ObjType', format = 'A', array = ObjType)
 
 cols = fits.ColDefs([col1, col2, col3, col4, col5, col6, col7])
